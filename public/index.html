@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoppia</title>
+    <link rel="shortcut icon" type="image/png" href="assets/items/carrot.png"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url('assets/ui/bg.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            overflow: hidden;
+            font-family: "Jersey 10", serif;
+        }
+
+        main {
+            width: 100vw;
+            height: 100svh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .title {
+            font-size: 6rem;
+            text-align: center;
+            color: #f5f5f5;
+            text-shadow: 4px 4px 0px #000;
+            opacity: 0;
+            transform: translateY(-50px);
+            animation: slideInTitle 1s forwards;
+        }
+
+        @keyframes slideInTitle {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .options {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInOptions 1.5s 0.5s forwards;
+        }
+
+        @keyframes fadeInOptions {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .button {
+            color: #ffa600;
+            font-size: 3rem;
+            text-shadow: 2px 2px 0px #000, 0 0 10px #000000;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .button:hover {
+            color: #f5f5f5;
+            cursor: pointer;
+            transform: scale(1.1); 
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <p class="title">HOPPIA</p>
+        <div class="options">
+            <p class="button" id="startButton">START</p>
+            <p class="button" id="exitButton">HOW TO PLAY</p>
+            <p class="button" id="creditsButton">CREDITS</p>
+        </div>
+    </main>
+    <script>
+        const elements = {
+            startButton: document.getElementById('startButton'),
+            exitButton: document.getElementById('htpButton'),
+            creditsButton: document.getElementById('creditsButton'),
+        };
+
+        elements.startButton.addEventListener('click', () => {
+            window.location.href = 'game.html';
+        });
+    </script>
+</body>
+</html>

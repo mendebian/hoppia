@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+    <title>Hoppia</title>
+    <link rel="shortcut icon" type="image/png" href="assets/items/carrot.png"/>
+    <link rel="stylesheet" href="css/game.css">
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+</head>
+<body>
+    <div id="hud">
+        <div class="gameStats">
+            <p id="ping"></p>
+            <p id="coords"></p>
+        </div>
+        <div id="chat" style="display: none;">
+            <div id="messages"></div>
+            <input id="input" type="text" maxlength="128">
+        </div>
+        <div id="inventory" style="display: none;"></div>
+    </div>
+    <div id="camera">
+        <canvas id="canvas"></canvas>
+    </div>
+    <script src="js/game.js" defer></script>
+</body>
+</html>
